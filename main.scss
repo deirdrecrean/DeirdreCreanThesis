@@ -1,0 +1,127 @@
+$main-color: rgb(128, 40, 0);
+$shadow: rgba(40, 40, 40, .3);
+@mixin listhover {
+    transform: translateY(-5px);
+    transition: .3s all;
+}
+
+@mixin liststyle {
+    list-style: none;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+}
+
+@mixin headingfont {
+    font-family: "Montserrat";
+}
+
+@mixin bodyfont {
+    font-family: "Open Sans";
+}
+
+header {
+    @include headingfont;
+    color: $main-color;
+    #name {
+        position: fixed;
+        top: 0px;
+        left: 5px;
+        background-color: white;
+    }
+    h1 {
+        position: fixed;
+        top: 0px;
+        right: 5px;
+    }
+}
+
+h2 {
+    @include headingfont;
+    padding-top: 20px;
+}
+
+.about {
+    visibility: hidden;
+}
+
+.about.visible {
+    visibility: visible;
+}
+
+.show {
+    border-radius: 0px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.gallery {
+    text-align: center;
+    column-count: 4;
+    column-gap: 20px;
+    li {
+        list-style: none;
+        .titlea, .titleb, .titlec, .titled {
+            border: none;
+            color: $main-color;
+            font-size: 20px;
+            padding: 20px;
+            margin: 3px;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+            background-color: $shadow;
+        }
+    }
+   
+    .lyricsa, .lyricsb, .lyricsc, .lyricsd {
+       display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: $main-color;
+        font-family: "Open Sans";
+        color: beige;
+        
+    }
+    .lyricsa.visible {
+        
+    
+        .closea, .closeb, .closec, .closed {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            border-radius: 180px;
+            padding: 5px;
+            background-color: beige;
+        }
+
+    }
+}
+
+footer {
+    #socials {
+        position: fixed;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vh;
+        width: 100%;
+        text-align: center;
+        background-color: $main-color;
+        li {
+            @include liststyle;
+            color: antiquewhite;
+        }
+        li:visited {
+            color: antiquewhite;
+        }
+        li:hover {
+    @include listhover;
+}
+        img {
+            height: 30px;
+        }
+    }
+}
+
